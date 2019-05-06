@@ -9,6 +9,9 @@ BaseUser::BaseUser(string fullname, string username, string password)
    setPassword(password);
    isAdmin = false;
 }
+BaseUser::BaseUser(){
+	isAdmin = false;
+}
 
 void BaseUser::setID(unsigned long int id)
 {
