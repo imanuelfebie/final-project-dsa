@@ -36,3 +36,10 @@
 
 NOTES.md
 
+# local files
+Test.cpp
+View.cpp
+View.h
+
+# Folders to ignore
+Docs/
