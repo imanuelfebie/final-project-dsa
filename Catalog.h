@@ -9,8 +9,8 @@
 class Catalog 
 {
     private:
-        vector<Product> catalog;
-        vector<Product>::iterator i; 
+        std::vector<Product> catalog;
+        // std::vector<Product>::iterator i; 
     
     public:
         // add product to catalog
@@ -20,7 +20,7 @@ class Catalog
         // list products inside catalog
         void listProduct();
         // search products 
-        void searchProduct(std::string name);
+        // void searchProduct(std::string name);
 };
 
 #endif
