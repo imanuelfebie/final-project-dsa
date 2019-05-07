@@ -20,6 +20,7 @@ class Product
         void setPrice(float price);
         void setStock(unsigned short int stock);
 
+        int getId();
         std::string getName();
         std::string getDescription();
         float getPrice();

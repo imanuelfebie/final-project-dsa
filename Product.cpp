@@ -5,7 +5,7 @@ using namespace std;
 Product::Product(string name, string description, float price,
         unsigned short int stock)
 {
-   id++;
+   id++; // increments id by 1 each time new instance is created
    setName(name);
    setDescription(description);
    setPrice(price);
@@ -30,6 +30,11 @@ void Product::setPrice(float price)
 void Product::setStock(unsigned short int stock)
 {
     this->stock = stock;
+}
+
+int Product::getId()
+{
+    return this->id;
 }
 
 string Product::getName()

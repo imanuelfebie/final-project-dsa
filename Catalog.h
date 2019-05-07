@@ -15,16 +15,21 @@ class Catalog
         // std::vector<Product>::iterator i; 
     
     public:
-        // add product to catalog
+        /**
+         * TODO: The createProduct(), deleteProduct() and updateProduct() method should only be accessible by the admin user
+         */
+
+        // add product to catalog -> admin
         void createProduct(Product p);
-        // delete product from catalog
+        // delete product from catalog -> admin
         void deleteProduct(std::string name);
-        // update a product
+        // update a product -> admin
         void updateProduct(std::string name);
         // list products inside catalog
+
         void listProduct();
         // search products 
-        // void searchProduct(std::string name);
+        void searchProduct(std::string name);
 };
 
 #endif

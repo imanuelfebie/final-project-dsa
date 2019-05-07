@@ -13,38 +13,21 @@ void Catalog::createProduct(Product p)
 
 void Catalog::listProduct() 
 {
+    // Using an iterator for the stl list
     list<Product>::iterator it;
+
+    for (it = catalog.begin();it != catalog.end();it++)
+    {
+        // Displaying product details
+        cout << "---------------------------------------" << endl;
+        cout << it->getId();
+        cout << it->getName() << endl;
+        cout << it->getDescription() << endl;
+        cout << "$ " << it->getPrice() << endl;
+        cout << "STOCK " << it->getStock() << endl;
+        cout << endl;
+    }
 
 }
 
-
-// void Catalog::createProduct(Product p)
-// {
-//     catalog.push_back(p);
-// }
-
-// void Catalog::listProduct()
-// {
-//     // Displaying the product
-//     int i;
-
-//     for (i=0;i<catalog.size();i++) {
-//         cout << catalog[i].getName() << endl;
-//         cout << catalog[i].getDescription() << endl;
-//         cout << catalog[i].getPrice() << endl;
-//         cout << catalog[i].getStock() << endl;
-//     }
-// }
-
-//TODO: FInd way to have iterator use product
-// void Catalog::searchProduct(string name)
-// {    
-//     // using binary search
-//     if (binary_search(catalog.begin(), catalog.end(), name))
-//     {
-//         cout << name << " found" << endl;
-//     } else {
-//         cout << name << " not found" << endl;
-//     }
-// }
 
