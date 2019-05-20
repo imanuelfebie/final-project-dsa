@@ -48,7 +48,10 @@ void Catalog::productList()
 
 // void Catalog::productDelete() {}
 
-// void Catalog::productSearch() {}
+bool Catalog::productSearch(string name)
+{   
+   
+} 
 
 
 

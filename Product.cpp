@@ -5,12 +5,22 @@ using namespace std;
 Product::Product(string name, string description, float price,
         unsigned short int stock)
 {
-   id++; // increments id by 1 each time new instance is created
+   setId(id);
    setName(name);
    setDescription(description);
    setPrice(price);
    setStock(stock);
 }
+
+void Product::setId(int id)
+{
+    this->id = id;
+}
+
+// void Product::setCategory(Category category)
+// {   
+//     this->category = category;
+// }
 
 void Product::setName(string name)
 {

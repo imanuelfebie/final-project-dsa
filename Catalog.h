@@ -12,8 +12,6 @@ class Catalog
     private:
         std::vector<Product> catalog;
         std::vector<Product>::iterator it;
-        // std::vector<Product> catalog;
-        // std::vector<Product>::iterator i; 
     
     public:
         /**
@@ -30,7 +28,8 @@ class Catalog
 
         void productList();
         // search products 
-        void productSearch(std::string name);
+        bool productSearch(std::string name);
+        
 };
 
 #endif

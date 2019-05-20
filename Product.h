@@ -1,26 +1,32 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+#include "Category.h"
 #include <string>
 
 class Product
 {
     private:
-        unsigned long int id;
+        int id;
+        // Category category;
         std::string name;
         std::string description;
         float price;
         unsigned short int stock; 
     
     public:
-        Product(std::string name, std::string description, float price, unsigned short int stock);
-        
+        Product(std::string name, std::string description, float price, 
+                unsigned short int stock);
+
+        void setId(int id);
+        // void setCategory(Category category);
         void setName(std::string name);
         void setDescription(std::string description);
         void setPrice(float price);
         void setStock(unsigned short int stock);
 
         int getId();
+        Category getCategory();
         std::string getName();
         std::string getDescription();
         float getPrice();
