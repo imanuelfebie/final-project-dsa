@@ -3,14 +3,15 @@
 
 #include "Product.h"
 #include <iterator>
-// #include <vector>
-#include <list>
+#include <vector>
+// #include <list>
 #include <string>
 
 class Catalog 
 {
     private:
-        std::list<Product> catalog;
+        std::vector<Product> catalog;
+        std::vector<Product>::iterator it;
         // std::vector<Product> catalog;
         // std::vector<Product>::iterator i; 
     
@@ -20,16 +21,16 @@ class Catalog
          */
 
         // add product to catalog -> admin
-        void createProduct(Product p);
+        void productCreate(Product p);
         // delete product from catalog -> admin
-        void deleteProduct(std::string name);
+        void productDelete(std::string name);
         // update a product -> admin
-        void updateProduct(std::string name);
+        void productUpdate(std::string name);
         // list products inside catalog
 
-        void listProduct();
+        void productList();
         // search products 
-        void searchProduct(std::string name);
+        void productSearch(std::string name);
 };
 
 #endif

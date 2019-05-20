@@ -5,29 +5,52 @@
 
 using namespace std;
 
-void Catalog::createProduct(Product p)
+void Catalog::productCreate(Product p)
 {
     // Adding new product object at beginning of list
-    catalog.push_front(p);
+    catalog.push_back(p);
 }
 
-void Catalog::listProduct() 
+void Catalog::productDelete(string name)
 {
-    // Using an iterator for the stl list
-    list<Product>::iterator it;
-
-    for (it = catalog.begin();it != catalog.end();it++)
+    // auto it = std::find_if(catalog.begin(), catalog.end(),
+    //                        [&name](Product& p) { return p.getName() == name; });
+    
+    // if (it != catalog.end())
+    //     auto index = distance(catalog.begin(), it);
+    //     cout << name;
+    
+    for (int i = 0;i < catalog.size();i++)
     {
-        // Displaying product details
-        cout << "---------------------------------------" << endl;
-        cout << it->getId();
-        cout << it->getName() << endl;
-        cout << it->getDescription() << endl;
-        cout << "$ " << it->getPrice() << endl;
-        cout << "STOCK " << it->getStock() << endl;
-        cout << endl;
+        if (catalog[i].getName() == name)
+        {
+            catalog.erase(catalog.begin() + i);
+            cout << "Successfull deleted";
+        } else {
+            cout << name << " does not exist" << endl;
+        }
     }
-
 }
+
+void Catalog::productList()
+{
+   cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
+    
+   for (it = catalog.begin();it != catalog.end(); it++)
+   {
+       // list out products
+       cout << it->getId() << "\t" << it->getName() << "\t" << it->getPrice()
+            << "\t" << it->getStock() << endl; 
+   } 
+}
+
+// void Catalog::productUpdate() {}
+
+// void Catalog::productDelete() {}
+
+// void Catalog::productSearch() {}
+
+
+
 
 
