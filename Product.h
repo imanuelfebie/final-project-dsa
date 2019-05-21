@@ -26,7 +26,7 @@ class Product
         void setStock(unsigned short int stock);
 
         int getId();
-        Category getCategory();
+        // Category getCategory();
         std::string getName();
         std::string getDescription();
         float getPrice();

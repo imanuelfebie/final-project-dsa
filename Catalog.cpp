@@ -50,7 +50,14 @@ void Catalog::productList()
 
 bool Catalog::productSearch(string name)
 {   
-   
+    for (int i = 0;i < catalog.size();i++)
+    {
+        if (catalog[i].getName() == name)
+        {
+            return true;
+            break;
+        }
+    }
 } 
 
 
