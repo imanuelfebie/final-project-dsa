@@ -12,14 +12,7 @@ void Catalog::productCreate(Product p)
 }
 
 void Catalog::productDelete(string name)
-{
-    // auto it = std::find_if(catalog.begin(), catalog.end(),
-    //                        [&name](Product& p) { return p.getName() == name; });
-    
-    // if (it != catalog.end())
-    //     auto index = distance(catalog.begin(), it);
-    //     cout << name;
-    
+{   
     for (int i = 0;i < catalog.size();i++)
     {
         if (catalog[i].getName() == name)
@@ -32,8 +25,26 @@ void Catalog::productDelete(string name)
     }
 }
 
+void Catalog::productUpdate(string &name)
+{   
+    float newPrice;
+
+    for (int i = 0;i < catalog.size();i++)
+    {
+        if (catalog.at(i).getName() == name)
+        {
+            printf("Set new price for %s : ",
+                    catalog.at(i).getName().c_str());
+            cin >> newPrice;
+            
+            catalog.at(i).setPrice(newPrice);
+        }
+    } 
+}
+
 void Catalog::productList()
 {
+    // Displaying the products
    cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
     
    for (it = catalog.begin();it != catalog.end(); it++)
@@ -50,9 +61,10 @@ void Catalog::productList()
 
 bool Catalog::productSearch(string name)
 {   
+    // Perform a simple linear search 
     for (int i = 0;i < catalog.size();i++)
     {
-        if (catalog[i].getName() == name)
+        if (catalog.at(i).getName() == name)
         {
             return true;
             break;

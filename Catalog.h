@@ -23,7 +23,7 @@ class Catalog
         // delete product from catalog -> admin
         void productDelete(std::string name);
         // update a product -> admin
-        void productUpdate(std::string name);
+        void productUpdate(std::string &name);
         // list products inside catalog
 
         void productList();
