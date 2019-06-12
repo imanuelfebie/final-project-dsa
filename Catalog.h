@@ -9,6 +9,8 @@
 
 class Catalog 
 {
+    // friend class ShoppingCart;
+
     private:
         std::vector<Product> catalog;
         std::vector<Product>::iterator it;
@@ -18,6 +20,7 @@ class Catalog
          * TODO: The createProduct(), deleteProduct() and updateProduct() method should only be accessible by the admin user
          */
 
+        std::vector<Product> getCatalog();
         // add product to catalog -> admin
         void productCreate(Product p);
         // delete product from catalog -> admin

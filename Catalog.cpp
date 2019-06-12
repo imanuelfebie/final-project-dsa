@@ -5,6 +5,11 @@
 
 using namespace std;
 
+vector<Product> Catalog::getCatalog()
+{
+    return this->catalog;
+}
+
 void Catalog::productCreate(Product p)
 {
     // Adding new product object at beginning of list
@@ -44,20 +49,17 @@ void Catalog::productUpdate(string &name)
 
 void Catalog::productList()
 {
-    // Displaying the products
-   cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
-    
-   for (it = catalog.begin();it != catalog.end(); it++)
-   {
-       // list out products
-       cout << it->getId() << "\t" << it->getName() << "\t" << it->getPrice()
-            << "\t" << it->getStock() << endl; 
-   } 
+    // Displaying the products if there is atleast 1 product
+    if (catalog.size() > 0) 
+        cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
+        
+        for (it = catalog.begin();it != catalog.end(); it++)
+        {
+            // list out products
+            cout << it->getId() << "\t" << it->getName() << "\t" << it->getPrice()
+                << "\t" << it->getStock() << endl; 
+        } 
 }
-
-// void Catalog::productUpdate() {}
-
-// void Catalog::productDelete() {}
 
 bool Catalog::productSearch(string name)
 {   
@@ -70,7 +72,7 @@ bool Catalog::productSearch(string name)
             break;
         }
     }
-} 
+}
 
 
 
