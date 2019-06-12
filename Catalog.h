@@ -21,6 +21,8 @@ class Catalog
          */
 
         std::vector<Product> getCatalog();
+        bool getItem(std::string);
+
         // add product to catalog -> admin
         void productCreate(Product p);
         // delete product from catalog -> admin

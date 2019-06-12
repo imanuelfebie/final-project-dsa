@@ -10,6 +10,16 @@ vector<Product> Catalog::getCatalog()
     return this->catalog;
 }
 
+bool Catalog::getItem(string name)
+{
+    for (Product &p : catalog)
+    {
+        if (p.getName() == name)
+            return true;
+            // break;
+    }
+}
+
 void Catalog::productCreate(Product p)
 {
     // Adding new product object at beginning of list

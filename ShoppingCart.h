@@ -9,12 +9,13 @@ class ShoppingCart
     private:
         // vector that contains products to order
         std::vector<Product> shoppingCart;
-        Catalog catalog;
         // int quantity;
     
     public:
         void cartList();
-        void addToCart(std::string);
+        int cartSize();
+
+        void addToCart(std::string, Catalog);
         void deleteFromCart(std::string);
         void clearCart();
 };
