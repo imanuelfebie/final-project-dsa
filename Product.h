@@ -8,7 +8,7 @@ class Product
 {
     private:
         int id;
-        // Category category;
+        static int uniqueID;
         std::string name;
         std::string description;
         float price;

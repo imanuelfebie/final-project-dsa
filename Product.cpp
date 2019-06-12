@@ -5,22 +5,19 @@ using namespace std;
 Product::Product(string name, string description, float price,
         unsigned short int stock)
 {
-   setId(id);
+   setId(++uniqueID);
    setName(name);
    setDescription(description);
    setPrice(price);
    setStock(stock);
 }
 
+int Product::uniqueID = 0;
+
 void Product::setId(int id)
 {
     this->id = id;
 }
-
-// void Product::setCategory(Category category)
-// {   
-//     this->category = category;
-// }
 
 void Product::setName(string name)
 {

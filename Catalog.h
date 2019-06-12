@@ -21,7 +21,6 @@ class Catalog
          */
 
         std::vector<Product> getCatalog();
-        bool getItem(std::string);
 
         // add product to catalog -> admin
         void productCreate(Product p);
@@ -32,8 +31,11 @@ class Catalog
         // list products inside catalog
 
         void productList();
-        // search products 
-        bool productSearch(std::string name);
+        // boolean search method
+        bool productBoolSearch(std::string &name);
+
+        // search by returning the object
+        Product getObject(std::string);
         
 };
 

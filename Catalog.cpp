@@ -10,16 +10,6 @@ vector<Product> Catalog::getCatalog()
     return this->catalog;
 }
 
-bool Catalog::getItem(string name)
-{
-    for (Product &p : catalog)
-    {
-        if (p.getName() == name)
-            return true;
-            // break;
-    }
-}
-
 void Catalog::productCreate(Product p)
 {
     // Adding new product object at beginning of list
@@ -71,18 +61,29 @@ void Catalog::productList()
         } 
 }
 
-bool Catalog::productSearch(string name)
+bool Catalog::productBoolSearch(string &name)
 {   
-    // Perform a simple linear search 
-    for (int i = 0;i < catalog.size();i++)
+    for (Product &p : catalog)
     {
-        if (catalog.at(i).getName() == name)
-        {
+        if (p.getName() == name)
             return true;
-            break;
-        }
     }
 }
+
+Product Catalog::getObject(string name)
+{
+    /**
+     * The getObject() method return the actual object when it is called. This is handy when in the view we want to get access to the object attributes.
+     */
+    for (Product &p : catalog)
+    {
+        if (p.getName() == name)
+            return p;
+    }
+
+}
+
+
 
 
 
