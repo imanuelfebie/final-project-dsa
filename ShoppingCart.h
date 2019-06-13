@@ -8,20 +8,23 @@
 class ShoppingCart
 {   
     private:
-        // vector that contains products to order
+        /**
+         * TODO: add Customer User field as private member
+         * 
+         */
+
         std::vector<Product> shoppingCart;
         float totalPrice = 0.0;
     
     public:
-        void cartList();
         int cartSize();
-        int objectQuantity();
         float calculateTotalPrice();
-        
 
         void addToCart(std::string&, Catalog);
+        void addToCart(std::string&, int, Catalog);
         void deleteFromCart(std::string);
         void clearCart();
+        void displayCart();
 };
 
 #endif

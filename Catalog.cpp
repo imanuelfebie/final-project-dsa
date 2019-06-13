@@ -34,17 +34,16 @@ void Catalog::productUpdate(string &name)
 {   
     float newPrice;
 
-    for (int i = 0;i < catalog.size();i++)
+    for (Product &p : catalog)
     {
-        if (catalog.at(i).getName() == name)
+        if (p.getName() == name)
         {
-            printf("Set new price for %s : ",
-                    catalog.at(i).getName().c_str());
+            printf("Set price for %s : ", p.getName().c_str());
             cin >> newPrice;
-            
-            catalog.at(i).setPrice(newPrice);
+
+            p.setPrice(newPrice);
         }
-    } 
+    }
 }
 
 void Catalog::productList()
@@ -80,7 +79,6 @@ Product Catalog::getObject(string name)
         if (p.getName() == name)
             return p;
     }
-
 }
 
 

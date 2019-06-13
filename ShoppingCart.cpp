@@ -5,27 +5,6 @@
 
 using namespace std;
 
-void ShoppingCart::cartList()
-{   
-    cout << shoppingCart.size() << endl << endl;
-
-    if (shoppingCart.size() > 0)
-    {   
-        cout << calculateTotalPrice() << endl;
-
-        for (Product p : shoppingCart)
-        {   
-            cout << p.getName() << endl;
-            cout << p.getDescription() << endl;
-            cout << p.getPrice() << endl << endl;
-        }
-    } 
-    else 
-    {
-        cout << "Shopping cart is empty";
-    }
-}
-
 int ShoppingCart::cartSize()
 {
     return shoppingCart.size();
@@ -33,18 +12,22 @@ int ShoppingCart::cartSize()
 
 void ShoppingCart::addToCart(string &name, Catalog catalog)
 {   
-    /** 
-     * FIXED: Doesnt add objects to the shoppingcart vector
-     * TODO: 1. Calculate total price
-     *       2. Allow choosing quantity
-     */
-
     for (Product &p : catalog.getCatalog())
     {
         if (p.getName() == name) {
             shoppingCart.push_back(p);
         } else {
             // Display message if object does not exist.
+        }
+    }
+}
+
+void ShoppingCart::addToCart(string name, Catalog catalog)
+{
+    for (Product p : catalog.getCatalog())
+    {
+        if (p.getName() == name) {
+            shoppingCart.push_back(p);
         }
     }
 }
@@ -56,4 +39,16 @@ float ShoppingCart::calculateTotalPrice()
         totalPrice += p.getPrice();
     
     return totalPrice;
+}
+
+void ShoppingCart::displayCart()
+{   
+    cout << "Total items : " << shoppingCart.size() << endl << endl;
+
+    if (!shoppingCart.empty()) {   
+        for (Product p : shoppingCart)   
+            cout << p.getName() << p.getPrice() << endl;
+    } else {
+        cout << "Shopping cart is empty" << endl;
+    }
 }

@@ -12,11 +12,14 @@ class Product
         std::string name;
         std::string description;
         float price;
-        unsigned short int stock; 
+        int quantity;
+        unsigned short int stock;
     
     public:
-        Product(std::string name, std::string description, float price, 
-                unsigned short int stock);
+        Product(const std::string &name, const std::string &description, const float &price, 
+                const unsigned short int &stock);
+        
+        // bool swap(const Product&, const Product&);
 
         void setId(int id);
         // void setCategory(Category category);

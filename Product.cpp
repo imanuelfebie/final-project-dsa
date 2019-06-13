@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Product::Product(string name, string description, float price,
-        unsigned short int stock)
+Product::Product(const string &name, const string &description, const float &price,
+        const unsigned short int &stock)
 {
    setId(++uniqueID);
    setName(name);

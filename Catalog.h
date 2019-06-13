@@ -16,12 +16,8 @@ class Catalog
         std::vector<Product>::iterator it;
     
     public:
-        /**
-         * TODO: The createProduct(), deleteProduct() and updateProduct() method should only be accessible by the admin user
-         */
-
+        // getter for catalog
         std::vector<Product> getCatalog();
-
         // add product to catalog -> admin
         void productCreate(Product p);
         // delete product from catalog -> admin
@@ -36,6 +32,8 @@ class Catalog
 
         // search by returning the object
         Product getObject(std::string);
+
+        // void sortCatalog();
         
 };
 
