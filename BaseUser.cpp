@@ -4,16 +4,20 @@ using namespace std;
 
 BaseUser::BaseUser(string fullname, string username, string password)
 {
-   setFullname(fullname);
-   setUsername(username);
-   setPassword(password);
-   isAdmin = false;
+    setID(++idProvider);
+    setFullname(fullname);
+    setUsername(username);
+    setPassword(password);
+    isAdmin = false;
 }
+
+int BaseUser::idProvider = 0;
+
 BaseUser::BaseUser(){
 	isAdmin = false;
 }
 
-void BaseUser::setID(unsigned long int id)
+void BaseUser::setID(int id)
 {
     this->id = id;
 }

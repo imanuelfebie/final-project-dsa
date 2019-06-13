@@ -3,8 +3,10 @@
 #include <iostream>
 #include "BaseUser.h"
 
-class Customer: public BaseUser{
-	void setIsAdmin();
+class Customer : public BaseUser{
+	
+	// void setIsAdmin();
+	
 	private:
 		std::string address;
 		int age;
