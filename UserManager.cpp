@@ -3,13 +3,16 @@
 
 using namespace std;
 
-void UserManager::registerCustomer(Customer &c)
+void UserManager::registerCustomer(Customer c)
 {
     customers.push_back(c);
 }
 
 void UserManager::customerList()
 {
-    for (Customer &c : customers)
-        cout << c.getFullname();
+    for (Customer c : customers)
+    {
+        cout << "Name: "  << c.getFullname() << endl;
+        cout << "Username: " << c.getUsername() << endl;
+    }
 }

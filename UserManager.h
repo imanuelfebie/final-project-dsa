@@ -12,7 +12,7 @@ class UserManager
         // std::vector<Administrator> admins;
 
     public:
-        void registerCustomer(Customer &c);
+        void registerCustomer(Customer);
         void customerList();
 };
 

@@ -24,7 +24,7 @@ class BaseUser
         // BaseUser();
 		BaseUser(std::string fullname, std::string username, std::string password);
 
-        virtual void setIsAdmin() = 0;
+        virtual void setIsAdmin(bool isAdmin) = 0;
         bool getIsAdmin();
 
         void setID(int id);
