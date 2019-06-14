@@ -2,6 +2,7 @@
 #define SHOPPINGCART_H
 
 #include "Catalog.h"
+#include "Customer.h"
 #include <vector>
 #include <iterator>
 

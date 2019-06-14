@@ -10,6 +10,7 @@ class UserView
 
     public:
         void start();
+        void loginView();
         Customer createCustomerView();
 };
 

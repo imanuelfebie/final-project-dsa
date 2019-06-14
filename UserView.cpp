@@ -1,51 +1,79 @@
-#include "UserManager.h"
+#include "UserView.h"
 #include <iostream>
 
 using namespace std;
 
-class UserView
+void UserView::start()
 {
-    private:
-        UserManager manager;
+    int choice;
 
-    public:
-        void start()
+    while (choice != 0)
+    {
+        cout << "[1] Login" << endl;
+        cout << "[2] New Customer" << endl << endl;
+        cin >> choice;
+
+        switch (choice)
         {
-            manager.registerCustomer(createCustomerView());
+            case 1:
+                loginView();
+                break;
+            case 2:
+                manager.registerCustomer(createCustomerView());
+                break;
+            case 0:
+                break;
         }
+    }
+}
 
-        Customer createCustomerView()
-        {
-            string fullname, username, password, address, 
-                   city, postalCode;
-            int age;
+void UserView::loginView()
+{
+    string username, password;
+    
+    system("clear");
 
-            system("clear");
+    cout << "Username: " << endl;
+    cin >> username;
 
-            cout << "New Customer" << endl;
-            cout << "----------------------" << endl;
-            
-            cout << "Fullname: ";
-            cin >> fullname;
+    cout << "Password: " << endl;
+    cin >> password;
 
-            cout << "Username: ";
-            cin >> username;
+    if (manager.loginManager(username, password)) {
+        cout << "Welcome " << username << endl;
+    }
+}
 
-            cout << "Password";
-            cin >> password;
+Customer UserView::createCustomerView()
+{
+    string fullname, username, password, address, city, postalCode;
+    int age;
 
-            cout << "Address: ";
-            cin >> address;
+    system("clear");
 
-            cout << "City: ";
-            cin >> city;
+    cout << "New Customer" << endl;
+    cout << "----------------------" << endl;
+    
+    cout << "Fullname: ";
+    cin >> fullname;
 
-            cout << "postalCode: "; 
-            cin >> postalCode;
+    cout << "Username: ";
+    cin >> username;
 
-            cout << "Age: ";
-            cin >> age;
+    cout << "Password";
+    cin >> password;
 
-            return Customer(fullname, username, password, address, city, postalCode, age);
-        } 
-};
+    cout << "Address: ";
+    cin >> address;
+
+    cout << "City: ";
+    cin >> city;
+
+    cout << "postalCode: "; 
+    cin >> postalCode;
+
+    cout << "Age: ";
+    cin >> age;
+
+    return Customer(fullname, username, password, address, city, postalCode, age);
+} 
