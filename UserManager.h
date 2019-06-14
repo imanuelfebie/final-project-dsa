@@ -1,7 +1,7 @@
 #ifndef USERMANAGER_H
 #define USERMANAGER_H
 
-#include <Admin.h>
+// #include <Admin.h>
 #include "Customer.h"
 #include <vector>
 
@@ -12,7 +12,7 @@ class UserManager
         // std::vector<Administrator> admins;
 
     public:
-        Customer registerCustomer(Customer&);
+        void registerCustomer(Customer &c);
         void customerList();
 };
 

@@ -2,19 +2,19 @@
 
 using namespace std;
 
+int BaseUser::idProvider = 0;
+
 BaseUser::BaseUser(string fullname, string username, string password)
 {
     setID(++idProvider);
     setFullname(fullname);
     setUsername(username);
     setPassword(password);
-    isAdmin = false;
 }
 
-int BaseUser::idProvider = 0;
-
-BaseUser::BaseUser(){
-	isAdmin = false;
+bool BaseUser::getIsAdmin()
+{
+    return this->isAdmin;
 }
 
 void BaseUser::setID(int id)
@@ -37,7 +37,7 @@ void BaseUser::setPassword(string password)
     this->password = password;
 }
 
-unsigned long int BaseUser::getID()
+int BaseUser::getID()
 {
     return this->id;
 }
