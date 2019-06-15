@@ -11,6 +11,7 @@ void UserView::start()
     {
         cout << "[1] Login" << endl;
         cout << "[2] New Customer" << endl << endl;
+        cout << "ChOICE : ";
         cin >> choice;
 
         switch (choice)
@@ -19,7 +20,7 @@ void UserView::start()
                 loginView();
                 break;
             case 2:
-                manager.registerCustomer(createCustomerView());
+                manager.createCustomer(createCustomerView());
                 break;
             case 0:
                 break;
@@ -33,15 +34,16 @@ void UserView::loginView()
     
     system("clear");
 
-    cout << "Username: " << endl;
+    cout << "Username: ";
     cin >> username;
 
-    cout << "Password: " << endl;
+    cout << "Password: " ;
     cin >> password;
 
-    if (manager.loginManager(username, password)) {
-        cout << "Welcome " << username << endl;
-    }
+    system("clear");
+
+    if (manager.login(username, password)) 
+        cout << "Successfull login";
 }
 
 Customer UserView::createCustomerView()
@@ -60,7 +62,7 @@ Customer UserView::createCustomerView()
     cout << "Username: ";
     cin >> username;
 
-    cout << "Password";
+    cout << "Password: ";
     cin >> password;
 
     cout << "Address: ";
