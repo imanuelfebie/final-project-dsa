@@ -21,10 +21,10 @@ class ShoppingCart
         float calculateTotalPrice();
 
         void addToCart(std::string&, Catalog);
-        void addToCart(std::string&, int, Catalog);
         void deleteFromCart(std::string);
+        std::vector<Product> getCart();
         void clearCart();
-        void displayCart();
+        // void displayCart();
 };
 
 #endif

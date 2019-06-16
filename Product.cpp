@@ -2,10 +2,11 @@
 
 using namespace std;
 
-Product::Product(const string &name, const string &description, const float &price,
+Product::Product(string &category, const string &name, const string &description, const float &price,
         const unsigned short int &stock)
 {
    setId(++uniqueID);
+   setCategory(category);
    setName(name);
    setDescription(description);
    setPrice(price);
@@ -62,4 +63,14 @@ float Product::getPrice()
 unsigned short int Product::getStock()
 {
     return this->stock;
+}
+
+void Product::setCategory(string name)
+{
+    this->category.setName(name);
+}
+
+string Product::getCategory()
+{
+    return this->category.getName();
 }
