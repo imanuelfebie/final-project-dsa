@@ -8,7 +8,10 @@ void UserView::start()
     int choice;
 
     while (choice != 0)
-    {
+    {   
+        if (!manager.getCurrentSession().getIsAuthenticated())
+            cout << manager.getAnonymousUser().getUser() << endl << endl;
+
         cout << "[1] Login" << endl;
         cout << "[2] New Customer" << endl << endl;
         cout << "ChOICE : ";
@@ -28,6 +31,15 @@ void UserView::start()
     }
 }
 
+// void UserView::displayUserName()
+// {
+//     if (manager.getCurrentSession().getIsAuthenticated()) {
+//         cout << "Welcome " << manager.getCurrentSession().getCurrentUser() << endl << endl;
+//     } else {
+//         cout << manager.getAnonymousUser().getUser() << endl << endl;
+//     }
+// }
+
 void UserView::loginView()
 {
     string username, password;
@@ -42,8 +54,8 @@ void UserView::loginView()
 
     system("clear");
 
-    if (manager.login(username, password)) 
-        cout << "Successfull login";
+    if (manager.login(username, password))
+        testHomeView();
 }
 
 Customer UserView::createCustomerView()
@@ -78,4 +90,9 @@ Customer UserView::createCustomerView()
     cin >> age;
 
     return Customer(fullname, username, password, address, city, postalCode, age);
-} 
+}
+
+void UserView::testHomeView()
+{
+    // displayUserName();
+}

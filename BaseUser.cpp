@@ -4,6 +4,8 @@ using namespace std;
 
 int BaseUser::idProvider = 0;
 
+BaseUser::BaseUser() {}
+
 BaseUser::BaseUser(string fullname, string username, string password)
 {
     setID(++idProvider);

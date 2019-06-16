@@ -2,14 +2,15 @@
 #define AUTH_H
 
 #include "Customer.h"
-// #include "UserManager.h"
+#include "UserManager.h"
 #include <vector>
 #include <string>
 
 class Auth
 {
-    private:
-        std::vector<Customer> customers;
+    friend class UserManager;
+
+    protected:
         bool isAuthenticated;
         std::string currentUser;
         // UserManager usermanager;

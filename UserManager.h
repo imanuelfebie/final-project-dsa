@@ -2,30 +2,28 @@
 #define USERMANAGER_H
 
 // #include <Admin.h>
+#include "AnonymousUser.h"
 #include "Customer.h"
-#include "Auth.h"
+#include "Session.h"
+
 #include <vector>
 #include <string>
 
 class UserManager
 {
     private:
-        std::vector<Customer> customers;
-        std::vector<Auth> sessions;
+        AnonymousUser anonymousUser;
+        Customer customer;
+        Session session(false, "Anonymous");
 
     public:
-        Auth getSession(bool isAuthenticated, std::string user);
-        void newSession(Auth a);
-
-        void createCustomer(Customer c);
+        AnonymousUser getAnonymousUser();
+        Customer getCustomer();
+        Session getCurrentSession();
 
         bool login(std::string username, std::string password);
-        void logout();
-
-        // void getCurrentUser();
-
-        std::vector<Customer> getCustomers();
-        std::vector<Auth> getSession();
+        Session startSession(bool authenticate, std::string currentUser);
+        void createCustomer(Customer c);
 };
 
 #endif

@@ -41,6 +41,8 @@ NOTES.md
 Test.cpp
 View.cpp
 View.h
+Order.h
+Order.cpp
 
 # Folders to ignore
 Docs/

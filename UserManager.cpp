@@ -3,40 +3,50 @@
 
 using namespace std;
 
-Auth UserManager::getSession(bool isAuthenticated, string user)
+Customer UserManager::getCustomer()
 {
-    // Create session object
-    return Auth(isAuthenticated, user);
+    return this->customer;
 }
 
-void UserManager::newSession(Auth a)
+AnonymousUser UserManager::getAnonymousUser()
 {
-    // Store session in vector
-    sessions.push_back(a);
+    return this->anonymousUser;
+}
+
+Session UserManager::getCurrentSession()
+{
+    return this->currentSession;
+}
+
+void UserManager::createCustomer(Customer customer)
+{
+    /**
+     * Pushes new Customer object to vector
+     */
+
+    customer.get().push_back(customer);
+}
+
+Session UserManager::startSession(bool authenticate, string currentUser)
+{
+    return Session(authenticate, currentUser);
 }
 
 bool UserManager::login(string username, string password)
 {
-    for (Customer c : customers)
+    /**
+     * If the user exist and the password is correct session will start.
+     * 
+     */
+    for (Customer c : customer.get())
     {
         if (c.getUsername() == username)
         {
             if (c.getPassword() == password)
             {
-                // Start new Session
-                newSession(getSession(true, username));
-                return true;
+                currentSession.setIsAuthenticated(true);
+                return true;           
             }
         }
-    }
-}
-
-void UserManager::createCustomer(Customer c)
-{
-    customers.push_back(c);
-}
-
-vector<Auth> UserManager::getSession()
-{
-    return this->sessions;
+    }           
 }

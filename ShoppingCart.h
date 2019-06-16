@@ -15,6 +15,7 @@ class ShoppingCart
          */
 
         std::vector<Product> shoppingCart;
+        stf::string fullname;
         float totalPrice = 0.0;
     
     public:

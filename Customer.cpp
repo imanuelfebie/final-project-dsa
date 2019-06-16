@@ -4,6 +4,8 @@
 
 using namespace std;
 
+Customer::Customer() {}
+
 Customer::Customer(string fullname, string username, string password,
 				   string address, string city, string postalCode,
 				   int age) : BaseUser::BaseUser(fullname, username, password)
@@ -58,4 +60,9 @@ void Customer::setAge(int age)
 int Customer::getAge()
 {
 	return this->age;
+}
+
+vector<Customer> Customer::get()
+{
+	return this->customers;
 }

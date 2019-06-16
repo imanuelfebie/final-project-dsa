@@ -21,7 +21,7 @@ class BaseUser
         bool isAdmin;
 
     public:
-        // BaseUser();
+        BaseUser();
 		BaseUser(std::string fullname, std::string username, std::string password);
 
         virtual void setIsAdmin(bool isAdmin) = 0;
