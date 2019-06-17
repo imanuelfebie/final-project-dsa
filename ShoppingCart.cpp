@@ -7,17 +7,21 @@ using namespace std;
 
 float ShoppingCart::getTotalPrice()
 {   
-    if (cartSize() > 0)
-    {
-        for (Product &p : shoppingCart)
-            this->totalPrice += p.getPrice();
-    }
+    /**
+     * Sums up the total price if the shoppingcart
+     */
+    
+    for (Product &p : shoppingCart)
+        this->totalPrice += p.getPrice();
     
     return this->totalPrice;
 }
 
 vector<Product> ShoppingCart::getCart()
 {
+    /**
+     * Return the shopping cart vector
+     */
     return this->shoppingCart;
 }
 
