@@ -10,16 +10,7 @@ int ShoppingCart::cartSize()
     return this->shoppingCart.size();
 }
 
-void ShoppingCart::addToCart(string &name, Catalog catalog)
-{   
-    for (Product &p : catalog.getCatalog())
-    {
-        if (p.getName() == name)
-            this->shoppingCart.push_back(p);
-    }
-}
-
-float ShoppingCart::calculateTotalPrice()
+float ShoppingCart::getTotalPrice()
 {
     // Returns the total price of the shopping cart.
     for (Product &p : shoppingCart)
@@ -31,4 +22,13 @@ float ShoppingCart::calculateTotalPrice()
 vector<Product> ShoppingCart::getCart()
 {
     return this->shoppingCart;
+}
+
+void ShoppingCart::addToCart(string &name, Catalog catalog)
+{   
+    for (Product &p : catalog.getCatalog())
+    {
+        if (p.getName() == name)
+            this->shoppingCart.push_back(p);
+    }
 }

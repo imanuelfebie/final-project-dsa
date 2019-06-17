@@ -18,13 +18,12 @@ class ShoppingCart
     
     public:
         int cartSize();
-        float calculateTotalPrice();
+        float getTotalPrice();
 
+        std::vector<Product> getCart();
         void addToCart(std::string&, Catalog);
         void deleteFromCart(std::string);
-        std::vector<Product> getCart();
         void clearCart();
-        // void displayCart();
 };
 
 #endif
