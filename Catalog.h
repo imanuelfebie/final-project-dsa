@@ -25,8 +25,8 @@ class Catalog
         // update a product -> admin
         void productUpdate(std::string &name);
         // list products inside catalog
-
-        void productList();
+        // void productList();
+        
         // boolean search method
         bool productBoolSearch(std::string &name);
 

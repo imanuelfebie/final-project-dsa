@@ -46,19 +46,19 @@ void Catalog::productUpdate(string &name)
     }
 }
 
-void Catalog::productList()
-{
-    // Displaying the products if there is atleast 1 product
-    if (catalog.size() > 0) 
-        cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
+// void Catalog::productList()
+// {
+//     // Displaying the products if there is atleast 1 product
+//     if (catalog.size() > 0) 
+//         cout << "ID" << "\t" << "Name" << "\t" << "Price" << "\t" << "Stock" << endl << endl;
         
-        for (it = catalog.begin();it != catalog.end(); it++)
-        {
-            // list out products
-            cout << it->getId() << "\t" << it->getName() << "\t" << it->getPrice()
-                << "\t" << it->getStock() << endl; 
-        } 
-}
+//         for (it = catalog.begin();it != catalog.end(); it++)
+//         {
+//             // list out products
+//             cout << it->getId() << "\t" << it->getName() << "\t" << it->getPrice()
+//                 << "\t" << it->getStock() << endl; 
+//         } 
+// }
 
 bool Catalog::productBoolSearch(string &name)
 {   
