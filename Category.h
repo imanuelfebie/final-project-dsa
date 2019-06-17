@@ -9,7 +9,7 @@ class Category
         std::string name;
 
     public:
-        void setName();
+        void setName(std::string name);
         std::string getName();
 };
 
