@@ -46,7 +46,7 @@ void BaseUser::setPassword(string password)
  }
  float BaseUser::printOrderHistory()
  {	
- 	queue <floar> temp=this->orderHistory;
+ 	queue <float> temp=this->orderHistory;
  	while(!temp.empty()){
  		cout<<temp.back()<<endl;
  		temp.pop();
