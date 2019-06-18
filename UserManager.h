@@ -10,25 +10,25 @@
 class UserManager
 {
 	private:
-		std::map<unsigned long int, Customer> custlist;
-		std::map<unsigned long int, Admin> adminlist;
-		unsigned long int baseID;
+		std::map<int, Customer> custlist;
+		std::map<int, Admin> adminlist;
+		int baseID;
 
 		bool isAuthenticated;
 		std::string currentUser;
 
 	public:
-		UserManager(unsigned long int base);
+		UserManager(int base);
 
-		// std::map(unsigned long int, Admin) getAminList();
+		// std::map(int, Admin) getAminList();
 
 		void addCustomer(Customer cust);
-		Customer getCustomer(unsigned long int id);
-		void deleteCustomer(unsigned long int id);
+		Customer getCustomer(int id);
+		void deleteCustomer(int id);
 		void addAdmin(Admin admin);
-		Admin getAdmin(unsigned long int id);
+		Admin getAdmin(int id);
 
-		void deleteAdmin(unsigned long int id);
+		void deleteAdmin(int id);
 
 		void setIsAuthenticated(bool isAuthenticated);
 		bool getIsAuthenticated();

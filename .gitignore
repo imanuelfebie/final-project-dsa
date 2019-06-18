@@ -42,6 +42,8 @@ NOTES.md
 Test.cpp
 View.cpp
 View.h
+UserList.cpp
+UserList.h
 # UserManager.cpp
 # UserManager.h
 

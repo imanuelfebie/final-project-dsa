@@ -3,7 +3,7 @@
 
 using namespace std;
 
-UserManager::UserManager(unsigned long int base)
+UserManager::UserManager(int base)
 {
 	this->baseID=base;
 }
@@ -13,12 +13,12 @@ void UserManager::addCustomer(Customer cust)
 	this->custlist.insert({this->baseID+custlist.size()+1,cust});
 }
 
-Customer UserManager::getCustomer(unsigned long int id)
+Customer UserManager::getCustomer(int id)
 {
 	return this->custlist[id];
 }
 
-void UserManager::deleteCustomer(unsigned long int id)
+void UserManager::deleteCustomer(int id)
 {
 	this->custlist.erase(id);
 }
@@ -28,12 +28,12 @@ void UserManager::addAdmin(Admin admin)
 	this->adminlist.insert({this->baseID+adminlist.size()+1,admin});
 }
 
-Admin UserManager::getAdmin(unsigned long int id)
+Admin UserManager::getAdmin(int id)
 {
 	return this->adminlist[id];
 }
 
-void UserManager::deleteAdmin(unsigned long int id)
+void UserManager::deleteAdmin(int id)
 {
 	this->adminlist.erase(id);
 }
@@ -59,6 +59,29 @@ bool UserManager::login(string username, string password)
 	/**
 	 * Loop through admin map
 	 */
+
+	map<int, Admin>::iterator itA;
+	map<int, Customer>::iterator itC;
+
+	for (itA=adminlist.begin();itA != adminlist.end();itA++)
+	{
+		if (itA->second.getUsername() == username && itA->second.getPassword() == password)
+		{
+			setIsAuthenticated(true);
+			setCurrentUser(username);
+			return true;
+		}
+	}
+
+	for (itC=custlist.begin();itC != custlist.end();itC++)
+	{
+		if (itC->second.getUsername() == username && itC->second.getPassword() == password)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 void UserManager::setCurrentUser(string currentuser)
@@ -68,5 +91,7 @@ void UserManager::setCurrentUser(string currentuser)
 
 string UserManager::getCurrentUser()
 {
+	setIsAuthenticated(true);
+	setCurrentUser(username);
 	return this->currentUser;
 }
