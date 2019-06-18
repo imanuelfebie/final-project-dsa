@@ -14,7 +14,7 @@ class BaseUser
     	bool isAdmin;
     public:
     	BaseUser(){};
-        void setIsAdmin();
+        virtual void setIsAdmin()=0;
         void setID( int id);
         void setFullname(std::string fullname);
         void setUsername(std::string username);
