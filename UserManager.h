@@ -13,7 +13,7 @@ class UserManager
 		std::map<int, Customer> custlist;
 		std::map<int, Admin> adminlist;
 		int baseID;
-
+		
 		bool isAuthenticated;
 		std::string currentUser;
 

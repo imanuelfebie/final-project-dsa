@@ -57,7 +57,7 @@ bool UserManager::getIsAuthenticated()
 bool UserManager::login(string username, string password)
 {
 	/**
-	 * Loop through admin map
+	 * Function that return true if either the Admin or Customer object exists in the adminList map or custList map.
 	 */
 
 	map<int, Admin>::iterator itA;
@@ -76,12 +76,20 @@ bool UserManager::login(string username, string password)
 	for (itC=custlist.begin();itC != custlist.end();itC++)
 	{
 		if (itC->second.getUsername() == username && itC->second.getPassword() == password)
-		{
+		{	
+			setIsAuthenticated(true);
+			setCurrentUser(username);
 			return true;
 		}
 	}
 
 	return false;
+}
+
+void UserManager::logout()
+{
+	setIsAuthenticated(false);
+	setCurrentUser();
 }
 
 void UserManager::setCurrentUser(string currentuser)
@@ -91,7 +99,5 @@ void UserManager::setCurrentUser(string currentuser)
 
 string UserManager::getCurrentUser()
 {
-	setIsAuthenticated(true);
-	setCurrentUser(username);
 	return this->currentUser;
 }
