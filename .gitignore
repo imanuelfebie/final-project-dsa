@@ -42,8 +42,8 @@ NOTES.md
 Test.cpp
 View.cpp
 View.h
-UserManager.cpp
-UserManager.h
+# UserManager.cpp
+# UserManager.h
 
 # Folders to ignore
 Docs/

@@ -2,6 +2,16 @@
 #include "BaseUser.h"
 
 using namespace std;
+
+BaseUser::BaseUser() {}
+
+BaseUser::BaseUser(string fullname, string username, string password)
+{
+	setFullname(fullname);
+	setUsername(username);
+	setPassword(password);
+}
+
 void BaseUser::setID(unsigned long int id)
 {
 	this->ID = id;

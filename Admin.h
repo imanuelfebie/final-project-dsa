@@ -7,13 +7,18 @@ class Admin:public BaseUser
 {
 	private:
 		int position;
+
 	public:
-		Admin(){};
+		Admin();
 		Admin(std::string fullname,std::string username,std::string password,int position);
-		void setIsAdmin();
+		
+		void setIsAdmin(bool isAdmin);
+		bool getIsAdmin();
+
 		void setPosition(int position_);
 		int getPosition();
-		bool getIsAdmin();
+
+		
 };
 
 #endif
