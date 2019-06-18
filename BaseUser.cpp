@@ -34,5 +34,3 @@ void BaseUser::setPassword(string password)
  {
  	return this->passWord;
  }
-void BaseUser::setIsAdmin(){
-}
