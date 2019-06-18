@@ -2,7 +2,7 @@
 #include "BaseUser.h"
 
 using namespace std;
-void BaseUser::setID( int id)
+void BaseUser::setID(unsigned long int id)
 {
 	this->ID = id;
 }
