@@ -77,6 +77,8 @@ bool UserManager::login(string username, string password)
 	{
 		if (itC->second.getUsername() == username && itC->second.getPassword() == password)
 		{
+			setIsAuthenticated(true);z
+			setCurrentUser(username);
 			return true;
 		}
 	}
