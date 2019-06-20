@@ -58,6 +58,11 @@ string Customer::getPostalCode()
 	return this->postalCode;
 }
 
+string Customer::getErrorMessage(string message)
+{
+	return message;
+}
+
 
 // void Customer::setAge(int age_)
 // {

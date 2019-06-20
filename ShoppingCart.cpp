@@ -38,7 +38,8 @@ int ShoppingCart::cartSize()
 void ShoppingCart::addToCart(int id, Catalog catalog)
 {
     /**
-     * Add products from Catalog to shopping shoppingcart List
+     * Checks if the user input product id exist inside the catalog vector,
+     * if it exist that object will be "copied" into the shopping cart vector
      **/
 
     for (Product &p : catalog.getCatalog())
@@ -66,6 +67,7 @@ void ShoppingCart::clearCart()
     /**
      * Empty the objects from cart and sets totalprice back to 0.00
      */
+    
     this->shoppingCart.clear();
     this->totalPrice = 0.0;
 }

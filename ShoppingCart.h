@@ -15,7 +15,7 @@ class ShoppingCart
 
         std::vector<Product> shoppingCart;
         float totalPrice = 0.0;
-    
+
     public:
         int cartSize();
         float getTotalPrice();

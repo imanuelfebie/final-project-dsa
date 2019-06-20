@@ -1,3 +1,7 @@
+/**
+ * Product class declaration
+ * created by Imanuel Febie
+ */
 #ifndef PRODUCT_H
 #define PRODUCT_H
 

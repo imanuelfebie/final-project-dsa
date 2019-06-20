@@ -1,6 +1,8 @@
 # General
 .vscode
-Makefile
+.idea
+cmake-build-debug/
+shopApp
 
 # Prerequisites
 *.d

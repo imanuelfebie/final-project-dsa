@@ -30,6 +30,8 @@ class Customer : public BaseUser
 		void setPostalCode(std::string postalCode);
 		std::string getPostalCode();
 
+		std::string getErrorMessage(std::string);
+
 		// void setAge(int age_);
 		// int getAge();
 };
