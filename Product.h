@@ -17,7 +17,7 @@ class Product
         unsigned short int stock;
     
     public:
-        Product(std::string &category, const std::string &name, const std::string &description, const float &price, 
+        Product(const std::string &name, const std::string &description, const float &price, 
                 const unsigned short int &stock);
         
         // bool swap(const Product&, const Product&);

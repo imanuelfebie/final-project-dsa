@@ -18,6 +18,7 @@ class UserManager
 		std::string currentUser;
 
 	public:
+		UserManager();
 		UserManager(int base);
 
 		// std::map(int, Admin) getAminList();

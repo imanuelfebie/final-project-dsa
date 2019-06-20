@@ -3,6 +3,8 @@
 
 using namespace std;
 
+UserManager::UserManager() {};
+
 UserManager::UserManager(int base)
 {
 	this->baseID=base;
@@ -89,7 +91,7 @@ bool UserManager::login(string username, string password)
 void UserManager::logout()
 {
 	setIsAuthenticated(false);
-	setCurrentUser();
+	setCurrentUser("");
 }
 
 void UserManager::setCurrentUser(string currentuser)
