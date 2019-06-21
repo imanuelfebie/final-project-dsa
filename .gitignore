@@ -4,6 +4,9 @@
 cmake-build-debug/
 shopApp
 
+# text files
+.csv
+
 # Prerequisites
 *.d
 
