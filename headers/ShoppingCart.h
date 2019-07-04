@@ -2,6 +2,7 @@
 #define SHOPPINGCART_H
 
 #include "Catalog.h"
+
 #include <vector>
 #include <iterator>
 
@@ -12,7 +13,6 @@ class ShoppingCart
          * TODO: add Customer User field as private member
          * 
          */
-
         std::vector<Product> shoppingCart;
         float totalPrice = 0.0;
 
@@ -21,7 +21,7 @@ class ShoppingCart
         float getTotalPrice();
 
         void addToCart(int, Catalog);
-        bool deleteItemFromCart(std::string);
+        bool deleteItemFromCart(int, ShoppingCart);
         std::vector<Product> getCart();
         void clearCart();
 };

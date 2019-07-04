@@ -3,9 +3,12 @@
 .idea
 cmake-build-debug/
 shopApp
+FileManager.cpp
+FileManager.h
+testFileManager
 
 # text files
-.csv
+dbFile.csv
 
 # Prerequisites
 *.d

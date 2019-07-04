@@ -1,4 +1,4 @@
-#include "ShoppingCart.h"
+#include "headers/ShoppingCart.h"
 #include <algorithm>
 #include <iostream>
 #include <numeric>
@@ -49,16 +49,16 @@ void ShoppingCart::addToCart(int id, Catalog catalog)
     }
 }
 
-bool ShoppingCart::deleteItemFromCart(std::string name)
+bool ShoppingCart::deleteItemFromCart(int id, ShoppingCart cart)
 {
     /**
      * Erase item from cart if input name is inside the cart
      */
 
-    for (int i = 0;i < this->shoppingCart.size();i++)
+    for (int i = 0;i < cart.cartSize();i++)
     {
-        if (this->shoppingCart[i].getName() == name)
-            this->shoppingCart.erase(shoppingCart.begin() + i);
+        if (cart.getCart()[i].getId() == id)
+            cart.getCart().erase(cart.getCart().begin() + i);
     }
 }
 

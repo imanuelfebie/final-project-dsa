@@ -1,9 +1,8 @@
-#include "Product.h"
+#include "headers/Product.h"
 
 using namespace std;
 
-Product::Product(const string &name, const string &description, const float &price,
-        const unsigned short int &stock)
+Product::Product(const string &name, const string &description, const float &price, int &stock)
 {
    setId(++uniqueID);
    setName(name);
@@ -34,7 +33,7 @@ void Product::setPrice(float price)
     this->price = price;
 }
 
-void Product::setStock(unsigned short int stock)
+void Product::setStock(int stock)
 {
     this->stock = stock;
 }
@@ -59,17 +58,7 @@ float Product::getPrice()
     return this->price;
 }
 
-unsigned short int Product::getStock()
+int Product::getStock()
 {
     return this->stock;
 }
-
-// void Product::setCategory(string name)
-// {
-//     this->category.setName(name);
-// }
-
-// string Product::getCategory()
-// {
-//     return this->category.getName();
-// }

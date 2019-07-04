@@ -4,19 +4,24 @@
 #include <iostream>
 
 #include "BaseUser.h"
+#include "ShoppingCart.h"
+#include <map>
 
 class Customer : public BaseUser
 {
+	/**
+	 * Prototype for the Customer model
+	 */
 	
 	private:
 		std::string address;
 		std::string city;
 		std::string postalCode;
-		// int age;
+		std::map<int, ShoppingCart> customerCart; /* A shoppingcart for the customer stored inside a map */
 
 	public:
 		Customer();
-		Customer(std::string fullname,std::string username,std::string password,std::string address, std::string city, std::string postalCode);
+		Customer(std::string fullname, std::string username, std::string password);
 
 		void setIsAdmin(bool isAdmin);
 		bool getIsAdmin();
@@ -29,11 +34,6 @@ class Customer : public BaseUser
 
 		void setPostalCode(std::string postalCode);
 		std::string getPostalCode();
-
-		std::string getErrorMessage(std::string);
-
-		// void setAge(int age_);
-		// int getAge();
 };
 
 #endif

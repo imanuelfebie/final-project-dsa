@@ -5,20 +5,12 @@
 
 class Admin:public BaseUser
 {
-	private:
-		int position;
-
 	public:
 		Admin();
-		Admin(std::string fullname,std::string username,std::string password,int position);
+		Admin(std::string fullname,std::string username,std::string password);
 		
 		void setIsAdmin(bool isAdmin);
 		bool getIsAdmin();
-
-		void setPosition(int position_);
-		int getPosition();
-
-		
 };
 
 #endif

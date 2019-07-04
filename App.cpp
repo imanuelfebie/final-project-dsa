@@ -1,7 +1,7 @@
-#include "View.h"
+#include "headers/HomeView.h"
 
 int main()
 {
-    View view;
-    view.homeView();
+    HomeView home;
+    home.homeView();
 }

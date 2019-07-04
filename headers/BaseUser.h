@@ -8,10 +8,8 @@
 class BaseUser
 {
 	private:
-		std::queue <float> orderHistory;
-
-        unsigned long int ID;
-        
+        static int idCounter;
+        int userID;
         std::string fullName;
         std::string userName;
         std::string passWord;
@@ -25,8 +23,9 @@ class BaseUser
 
         virtual void setIsAdmin(bool isAdmin) = 0;
         
-        void setID(unsigned long int id);
-        unsigned long int getID();
+        static int getIdCounter();
+        void setID(int id);
+        int getID();
         
         void setFullname(std::string fullname);
         void setUsername(std::string username);
@@ -35,9 +34,6 @@ class BaseUser
         std::string getFullname();
         std::string getUsername();
         std::string getPassword();
-        
-        void addOrder(float bill);
-        float printOrderHistory();
 };
 
 #endif

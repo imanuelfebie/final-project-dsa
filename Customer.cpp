@@ -1,20 +1,19 @@
-#include "Customer.h"
+#include "headers/Customer.h"
 #include <iostream>
 
 using namespace std;
 
 Customer::Customer() {}
 
-Customer::Customer(string fullname,string username,string password,string address, string city, string postalCode)
+Customer::Customer(string fullname,string username,string password)
 : BaseUser(fullname, username, password)
 {
+	/**
+	 * Constructor for the customer object
+	 */
 	setFullname(fullname);
 	setPassword(password);
 	setUsername(username);
-	setAddress(address);
-	setCity(city);
-	setPostalCode(postalCode);
-	// setAge(age);
 	setIsAdmin(false);
 }
 
@@ -58,18 +57,3 @@ string Customer::getPostalCode()
 	return this->postalCode;
 }
 
-string Customer::getErrorMessage(string message)
-{
-	return message;
-}
-
-
-// void Customer::setAge(int age_)
-// {
-// 	this->age=age_;
-// }
-
-// int Customer::getAge()
-// {
-// 	return this->age;
-// }

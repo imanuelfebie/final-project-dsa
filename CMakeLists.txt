@@ -16,4 +16,6 @@ add_executable(
     Catalog.cpp
     ShoppingCart.cpp
     View.cpp
+        FileManager.cpp
+
 )
