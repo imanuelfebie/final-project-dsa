@@ -18,9 +18,14 @@ class UserManager
 		int adminIdCounter = 0;
 		int customerIdCounter = 0;
 		
-		bool isAuthenticated;
+		bool isAuthenticated = false;
 		Customer currentCustomer;
 		Admin currentAdmin;
+
+		std::string currentAdminName();
+		std::string currentCustomerName();
+
+
 	public:
 		UserManager();
 
@@ -28,21 +33,23 @@ class UserManager
 		// int getCustomerIdCounter();
 		void setIsAuthenticated(bool isAuthenticated);
 		bool getIsAuthenticated();
+
 		void setCurrentCustomer(Customer currentCustomer);
 		Customer getCurrentCustomer();
+
 		void setCurrentAdmin(Admin currentAdmin);
 		Admin getCurrentAdmin();
 
-		void addCustomer(Customer cust);
-		void deleteCustomer(int id);
+		std::string getCurrentAdminName();
+		std::string getCurrentCustomerName();
 		
-		bool createAdminController(std::string name, std::string usernamer, std::string password);
-		// void addAdmin(Admin admin);
-		void deleteAdmin(int id);
+		bool createCustomerController(std::string name, std::string username, std::string password);
+
+		bool createAdminController(std::string name, std::string username, std::string password);
 		
-		bool customerLogin(std::string username, std::string password);
-		bool adminLogin(std::string username, std::string password);
-		void logout();
+		bool customerLoginController(std::string username, std::string password);
+		bool adminLoginController(std::string username, std::string password);
+		bool logout();
 };
 
 #endif

@@ -34,8 +34,7 @@ int ShoppingCart::cartSize()
 
     return this->shoppingCart.size();
 }
-
-void ShoppingCart::addToCart(int id, Catalog catalog)
+bool ShoppingCart::addToCart(int id, Catalog catalog)
 {
     /**
      * Checks if the user input product id exist inside the catalog vector,
@@ -55,11 +54,7 @@ bool ShoppingCart::deleteItemFromCart(int id, ShoppingCart cart)
      * Erase item from cart if input name is inside the cart
      */
 
-    for (int i = 0;i < cart.cartSize();i++)
-    {
-        if (cart.getCart()[i].getId() == id)
-            cart.getCart().erase(cart.getCart().begin() + i);
-    }
+    
 }
 
 void ShoppingCart::clearCart()

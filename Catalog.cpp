@@ -18,32 +18,25 @@ bool Catalog::productCreateController(string name, string description, float pri
     catalog.push_back(product);
 }
 
-void Catalog::productDeleteController(int id)
-{
 
-    // for (int i = 0;i < catalog.size();i++)
-    // {
-    //     if (catalog[i].getId() == id)
-    //     {
-    //         catalog.erase(catalog.begin() + i);
-    //         cout << "Successful deleted";
-    //     } else {
-    //         cout << id << " does not exist" << endl;
-    //     }
-    // }
-}
-
-void Catalog::productUpdate(int id)
+bool Catalog::productDeleteController(int id, Catalog c)
 {   
-}
-
-bool Catalog::productBoolSearch(string &name)
-{   
-    for (Product &p : catalog)
+    
+    for (int i = 0 ; i < c.getCatalog().size() ; ++i) 
     {
-        if (p.getName() == name)
-            return true;
+        if (c.getCatalog().at(i).getId() == id) {
+            c.getCatalog().erase(c.getCatalog().begin() + i);
+        }
     }
+
+    return false;
+}
+
+bool Catalog::productSearchController(string name)
+{
+    vector<Product>::iterator it;
+
+    
 }
 
 

@@ -11,7 +11,6 @@ class Catalog
 {
     private:
         std::vector<Product> catalog;
-        std::vector<Product>::iterator it;
     
     public:
         
@@ -19,17 +18,14 @@ class Catalog
         
         bool productCreateController(std::string, std::string, float, int);
         
-        void productDeleteController(int);
+        bool productDeleteController(int, Catalog);
         
-        void productUpdate(int);
-        
-        // boolean search method
-        bool productBoolSearch(std::string &name);
+        bool productSearchController(std::string);
 
-        // search by returning the object
-        Product getObject(std::string);
-
-        // void sortCatalog();
+        void productNameUpdate(std::string);
+        void productDescriptionUpdate(std::string);
+        void productPriceupdate(float);
+        void productStockUpdate(int);
         
 };
 

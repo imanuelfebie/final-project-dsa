@@ -17,7 +17,6 @@ class Customer : public BaseUser
 		std::string address;
 		std::string city;
 		std::string postalCode;
-		std::map<int, ShoppingCart> customerCart; /* A shoppingcart for the customer stored inside a map */
 
 	public:
 		Customer();

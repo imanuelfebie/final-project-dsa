@@ -20,7 +20,7 @@ class ShoppingCart
         int cartSize();
         float getTotalPrice();
 
-        void addToCart(int, Catalog);
+        bool addToCart(int, Catalog);
         bool deleteItemFromCart(int, ShoppingCart);
         std::vector<Product> getCart();
         void clearCart();
